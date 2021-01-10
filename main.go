@@ -5,11 +5,10 @@ import (
 )
 
 func printColors(n interface{}, c interface{}) {
-	var name = n.(names).nameN
-	if name == "Sandra" {
-		fmt.Println(name + " likes color " + c.(colors).nameC)
+	if n.(names).nameN == "Sandra" {
+		fmt.Println("Sandra likes color " + c.(colors).nameC)
 	} else {
-		fmt.Println(name + " likes color " + c.(colors).nameC)
+		fmt.Println("Arturo likes color " + c.(colors).nameC)
 	}
 }
 
@@ -22,11 +21,6 @@ type colors struct {
 }
 
 func main() {
-	var nam = names{"Sandra"}
-	var col = colors{"Pink"}
-	printColors(nam, col)
-
-	nam = names{"Arturo"}
-	col = colors{"Red"}
-	printColors(nam, col)
+	printColors(names{"Sandra"}, colors{"Pink"})
+	printColors(names{"Arturo"}, colors{"Red"})
 }
